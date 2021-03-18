@@ -21,11 +21,10 @@ export class CursosComponent implements OnInit {
   ngOnInit(): void {
     this.cursos = this.cursosService.getCursos();
 
-    this.cursosService.emitirCursoCriado.subscribe(
+    CursosService.criouNovoCurso.subscribe(
 
-      curso => console.log(curso)
-
+     // curso => console.log(curso)
+      curso => this.cursos.push(curso)
     );
   }
-
 }
