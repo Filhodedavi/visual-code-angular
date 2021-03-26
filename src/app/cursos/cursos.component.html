@@ -1,0 +1,9 @@
+<p class="texto">Listas de Cursos</p>
+
+<p class="text-light bg-dark">Pagina: {{ paginas }}</p>
+
+  <ol class="list list-group-numbered">
+    <li class="list-group-item" *ngFor="let curso of cursos" [routerLink]="['/curso', curso.id]">
+        {{ curso.nome }}
+    </li>
+  </ol>
