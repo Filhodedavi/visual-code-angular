@@ -16,7 +16,6 @@
       </app-campo-control-erro>
       <app-campo-control-erro [mostrarErro]="formulario.get('email').status === 'VALID'" msgErro="Email válido!">
       </app-campo-control-erro>
-
     </div>
   </div>
 
@@ -130,6 +129,7 @@
     <div class="col-md-3" [ngClass]="aplicaCssErro('termos')">
       <div class="checkbox">
         <label class="checkbox-inline">
+          <!--consegue associar esse campo checkbox com o campo termos declarado no data form component ts  -->
           <input type="checkbox" formControlName="termos"> Aceito os termos.
         </label>
         <app-error-msg [control]="formulario.get('termos')" label="Aceito os termos"></app-error-msg>
