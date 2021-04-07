@@ -35,28 +35,28 @@ export class TemplateFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  verificaValidTouched(campo) {
+  verificaValidTouched(campo: any) {
     return !campo.valid && campo.touched;
   }
 
-  aplicaCssErro(campo) {
+  aplicaCssErro(campo: any) {
     return {
       'has-error': this.verificaValidTouched(campo),
       'has-feedback': this.verificaValidTouched(campo)
     };
   }
 
-  consultaCEP(cep, form) {
+  consultaCEP(cep: any, form: any) {
     // Nova variável "cep" somente com dígitos.
     cep = cep.replace(/\D/g, '');
 
     if (cep != null && cep !== '') {
       this.cepService.consultaCEP(cep)
-      .subscribe(dados => this.populaDadosForm(dados, form));
+      .subscribe((dados: any) => this.populaDadosForm(dados, form));
     }
   }
 
-  populaDadosForm(dados, formulario) {
+  populaDadosForm(dados: any, formulario: any) {
     formulario.setValue({
       nome: formulario.value.nome,
       email: formulario.value.email,
@@ -85,7 +85,7 @@ export class TemplateFormComponent implements OnInit {
     // console.log(form);
   }
 
-  resetaDadosForm(formulario) {
+  resetaDadosForm(formulario: any) {
     formulario.form.patchValue({
       endereco: {
         rua: null,
