@@ -14,13 +14,14 @@ export class TemplateFormComponent implements OnInit {
     email: null
   };
 
-  onSubmit(formulario: any) {
+  onSubmit(formulario: any): any {
     console.log(formulario);
 
     // form.value
     // console.log(this.usuario);
 
     this.http.post('https://httpbin.org/post', JSON.stringify(formulario.value))
+      // tslint:disable-next-line: deprecation
       .subscribe(dados => {
         console.log(dados);
         formulario.form.reset();
@@ -32,13 +33,16 @@ export class TemplateFormComponent implements OnInit {
     private cepService: ConsultaCepService
   ) { }
 
+  // tslint:disable-next-line: typedef
   ngOnInit() {
   }
 
+  // tslint:disable-next-line: typedef
   verificaValidTouched(campo: any) {
     return !campo.valid && campo.touched;
   }
 
+  // tslint:disable-next-line: typedef
   aplicaCssErro(campo: any) {
     return {
       'has-error': this.verificaValidTouched(campo),
@@ -46,6 +50,7 @@ export class TemplateFormComponent implements OnInit {
     };
   }
 
+  // tslint:disable-next-line: typedef
   consultaCEP(cep: any, form: any) {
     // Nova variável "cep" somente com dígitos.
     cep = cep.replace(/\D/g, '');
@@ -56,6 +61,7 @@ export class TemplateFormComponent implements OnInit {
     }
   }
 
+  // tslint:disable-next-line: typedef
   populaDadosForm(dados: any, formulario: any) {
     formulario.setValue({
       nome: formulario.value.nome,
@@ -85,7 +91,7 @@ export class TemplateFormComponent implements OnInit {
     // console.log(form);
   }
 
-  resetaDadosForm(formulario: any) {
+  resetaDadosForm(formulario: any): any {
     formulario.form.patchValue({
       endereco: {
         rua: null,
