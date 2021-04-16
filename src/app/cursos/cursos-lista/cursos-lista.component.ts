@@ -29,7 +29,7 @@ export class CursosListaComponent implements OnInit {
   cursoSelecionado!: Curso;
 
   constructor(
-    private service: CursosService,
+    private service: Cursos2Service,
     private modalService: BsModalService,
     private alertService: AlertModalService,
     private router: Router,

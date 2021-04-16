@@ -17,8 +17,8 @@ export class CursoResolverGuard implements Resolve<Curso> {
     }
 
     return of({
-      id: null,
-      nome: null
+      id,
+      nome
     });
   }
 
