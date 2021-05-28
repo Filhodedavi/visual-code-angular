@@ -23,7 +23,7 @@ export class CursosListaComponent implements OnInit {
   deleteModalRef!: BsModalRef;
   @ViewChild('deleteModal', { static: true }) deleteModal: any;
 
-  cursos$: Observable<Curso[]> | any;
+  cursos$!: Observable<Curso[]>;
   error$ = new Subject<boolean>();
 
   cursoSelecionado!: Curso;

@@ -3,7 +3,7 @@ import { delay, tap, take } from 'rxjs/operators';
 
 export class CrudService<T> {
 
-  constructor(protected http: HttpClient, private API_URL: string) {}
+  constructor(protected http: HttpClient, private API_URL: any) {}
 
   list(): any {
     return this.http.get<T[]>(this.API_URL)

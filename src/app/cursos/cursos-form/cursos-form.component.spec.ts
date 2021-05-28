@@ -9,6 +9,7 @@ describe('CursosFormComponent', () => {
   let component: CursosFormComponent;
   let fixture: ComponentFixture<CursosFormComponent>;
 
+  // tslint:disable-next-line: deprecation
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CursosFormComponent ]

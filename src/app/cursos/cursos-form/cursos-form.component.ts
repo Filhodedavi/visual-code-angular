@@ -1,10 +1,8 @@
 import { ActivatedRoute } from '@angular/router';
 import { AlertModalService } from './../../shared/alert-modal.service';
-import { CursosService } from './../cursos.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
-import { map, switchMap } from 'rxjs/operators';
 import { Cursos2Service } from '../cursos2.service';
 
 @Component({
