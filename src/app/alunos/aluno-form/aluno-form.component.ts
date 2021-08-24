@@ -1,7 +1,7 @@
 import { IFormCanDeactivate } from './../../guards/iform-candeactivate';
 import { AlunosService } from './../alunos.service';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
@@ -12,7 +12,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class AlunoFormComponent implements OnInit, IFormCanDeactivate {
 
   aluno: any = {};
-  inscricao: Subscription;
+  inscricao!: Subscription;
   private formMudou: boolean = false;
 
   constructor(

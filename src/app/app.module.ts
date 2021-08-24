@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { AlunosDeactivateGuard } from './guards/aluno-deactivate.guard';
 import { AlunosGuard } from './guards/alunos.guard';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { CursosGuard } from './guards/cursos.guard';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { AppComponent } from './app.component';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,13 @@ import { AppComponent } from './app.component';
     CursosComponent,
     AlunosComponent,
     CursoDetalheComponent,
-    CursoNaoEncontradoComponent
+    CursoNaoEncontradoComponent,
+    PaginaNaoEncontradaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [AuthService, AuthGuard, CursosGuard, AlunosGuard, AlunosDeactivateGuard],
   bootstrap: [AppComponent]
